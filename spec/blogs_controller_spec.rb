@@ -9,6 +9,10 @@ RSpec.describe "Blog Views" do
 
 	it "checks to see that a post shows up on front page" do
 		get "/"
-		expect(last_response.body).to include("post on cats")
+		expect(last_response.status).to eq(200)
+	end
+
+	it "checks for a new post page" do
+		
 	end
 end

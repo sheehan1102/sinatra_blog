@@ -1,5 +1,5 @@
-post1 = Post.new("This is an awesome post on cats", "This is all of my content on cats!")
-post2 = Post.new("This is a cool post on dogs", "This is all of my content on dogs!")
+post1 = Post.new("This is an awesome post on cats", "This is all of my content on cats!", "Sheehan", "General")
+post2 = Post.new("This is a cool post on dogs", "This is all of my content on dogs!", "Sheehan", "General")
 
 blog = Blog.new
 blog.add_post(post1)
@@ -20,7 +20,7 @@ get "/create_new" do
 end
 
 post "/create_new" do
-	blog.add_post(Post.new(params[:title], params[:content]))
+	blog.add_post(Post.new(params[:title], params[:content], params[:author], params[:category]))
 	redirect to("/")
 end
 

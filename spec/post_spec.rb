@@ -1,6 +1,6 @@
 RSpec.describe "Posts" do
 	before :each do
-		@post = Post.new("This is my first post", "This is my content")
+		@post = Post.new("This is my first post", "This is my content", "author jim", "general")
 	end
 
 	it "has the title passed to it" do
@@ -19,7 +19,15 @@ RSpec.describe "Posts" do
 		expect(@post.id).to be > 0
 	end
 
+	it "has an author" do
+		expect(@post.author).to be_truthy
+	end
+
+	it "has a category" do
+		expect(@post.category).to be_truthy
+	end
+
 	it "has unique id from ascending class variable" do
-		expect(@post.id).to be < Post.new("Test", "Test").id
+		expect(@post.id).to be < Post.new("Test", "Test", "Sheehan", "General").id
 	end
 end

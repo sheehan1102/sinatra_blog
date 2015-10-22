@@ -14,7 +14,7 @@
 				<ul>
 					<% @posts.each do |post| %>
 						<li>
-							<a href="/post/<%= post.id %>"><%= post.title %></a> | 
+							<a href="/post/<%= post.id %>"><%= post.title %></a> by <%= post.author %> in category: <%= post.category %> | 
 							<a href="/delete_post/<%= post.id %>">delete</a>
 					<% end %>
 				</ul>
