@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Home | Blog</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<h1>My Awesome Blog</h1>
+				<ul>
+					<% @posts.each do |post| %>
+						<li>
+							<a href="/post/<%= post.id %>"><%= post.title %></a> | 
+							<a href="/delete_post/<%= post.id %>">delete</a>
+					<% end %>
+				</ul>
+				<p><a href="/create_new">Write a new post</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
